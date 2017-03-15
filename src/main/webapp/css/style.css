@@ -1,11 +1,35 @@
 header {
+	position: relative;
 	background-color: #008040;
 	border-radius: 5px;
+	min-width: 750px;
 }
 
 #home-page-logo {
-	width: 400x;
-	height: 200px;
+	min-width: 400x;
+	max-width: 80%;
+	min-height: 200px;
+	max-height: 60%;
+	z-index: -1;
+}
+
+#survey-link-anchor {
+	display: block;
+	color: white;
+}
+
+#survey-link {
+	position: absolute;
+	background-color: #804000;
+	right: 100px;
+	bottom: 25px;
+	border-radius: 5px;
+	padding: 0px 50px 0px 50px;
+}
+
+#survey-link-text{
+	color: white;
+	underline: none;
 }
 
 section {

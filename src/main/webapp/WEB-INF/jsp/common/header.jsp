@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -9,12 +9,16 @@
 </head>
 <body>
 	<header>
-		<c:url value="/" var="homeLink"/>
-		<c:url value="/img/logo.png" var="logoSrc"/>
-		<a href="${homeLink}">
-			<img id="home-page-logo" src="${logoSrc}" alt="NPG Logo"/>
+		<c:url value="/" var="homeLink" />
+		<c:url value="/img/logo.png" var="logoSrc" />
+		<a href="${homeLink}"> 
+			<img id="home-page-logo" src="${logoSrc}"
+			alt="NPG Logo" />
+		</a>
+		<c:url value="/survey" var="surveyLink" />
+		<a id="survey-link-anchor" href="${surveyLink}">
+			<div id="survey-link">
+				<p id="survey-link-text">Take Our Survey!</p>
+			</div>
 		</a>
 	</header>
-	<nav>
-	
-	</nav>
