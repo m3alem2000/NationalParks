@@ -64,10 +64,8 @@ section {
 	padding-left: 10px;
 	width: 70%;
 	background-color: white;
-<<<<<<< HEAD
 	border: solid 1px black;
 	border-radius: 5px;
-=======
 }
 
 #survey-list-main-div{
@@ -81,5 +79,4 @@ section {
     left: 0;
     right: 0;
     margin: auto;
->>>>>>> 27d6f7f344796001f16ccbeac131b86592fab9c9
 }
