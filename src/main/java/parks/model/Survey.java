@@ -7,6 +7,14 @@ public class Survey {
 	private String emailAddress;
 	private String state;
 	private String activityLevel;
+	private int votes;
+	
+	public int getVotes() {
+		return votes;
+	}
+	public void setVotes(int votes) {
+		this.votes = votes;
+	}
 	
 public int getSurveyId() {
 		return surveyId;
