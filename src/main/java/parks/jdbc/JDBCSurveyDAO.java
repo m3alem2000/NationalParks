@@ -32,14 +32,15 @@ public class JDBCSurveyDAO implements SurveyDAO {
 
 	@Override
 	public Survey getTopSurveyPark() {
-		String sqlFindTopSurveyResults = "select * from survey_result order by parkcode";
-		ArrayList<Survey> surveyResult = new ArrayList<Survey>();
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindAllSurveyResults);
-		while(results.next()) {
-			Survey survey = mapRowToSurvey(results);
-			surveyResult.add(survey);
+		Survey theSurvey = null;
+		String sqlFindTopSurveyResults = "select count(parkcode) as votes, parkcode from survey_result" +
+										"group by parkcode order by parkcode desc limit 1";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindTopSurveyResults);
+		if(results.next()) {
+			theSurvey = mapRowToSurvey(results);
+		
 		}
-	return surveyResult;
+	return theSurvey;
 
 	}
 
@@ -59,6 +60,7 @@ public class JDBCSurveyDAO implements SurveyDAO {
 		theSurvey.setEmailAddress(results.getString("emailaddress"));
 		theSurvey.setState(results.getString("state"));
 		theSurvey.setActivityLevel(results.getString("activitylevel"));
+		theSurvey.setVotes(results.getInt("votes"));
 		
 		return theSurvey;
 	}
