@@ -32,14 +32,23 @@ public class JDBCSurveyDAO implements SurveyDAO {
 
 	@Override
 	public Survey getTopSurveyPark() {
-		
-		return null;
+		String sqlFindTopSurveyResults = "select * from survey_result order by parkcode";
+		ArrayList<Survey> surveyResult = new ArrayList<Survey>();
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindAllSurveyResults);
+		while(results.next()) {
+			Survey survey = mapRowToSurvey(results);
+			surveyResult.add(survey);
+		}
+	return surveyResult;
+
 	}
 
 	@Override
-	public Survey addSurvey(String parkCode, String emailAddress, String state, String activityLevel) {
-		// TODO Auto-generated method stub
-		return null;
+	public void addSurvey(String parkCode, String emailAddress, String state, String activityLevel) {
+		String sqlSurvey = "insert into survey_result (parkcode, emailaddress, state, activitylevel) " +
+							"values (?,?,?,?)";
+		jdbcTemplate.update(sqlSurvey, parkCode, emailAddress, state, activityLevel);
+		
 	}
 	
 	private Survey mapRowToSurvey(SqlRowSet results) {
