@@ -3,7 +3,7 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
 <section>
-	<
+	<h1>${park.parkName}</h1>
 </section>
 
 
