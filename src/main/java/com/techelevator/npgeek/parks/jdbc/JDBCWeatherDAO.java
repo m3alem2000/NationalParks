@@ -37,10 +37,11 @@ public class JDBCWeatherDAO implements WeatherDAO {
 		theWeather = new Weather();
 		theWeather.setParkCode(results.getString("parkcode"));
 		theWeather.setFiveDayForecastValue(results.getInt("fivedayforecastvalue"));
-		theWeather.setLow(results.getInt("low"));
-		theWeather.setHigh(results.getInt("high"));
+		theWeather.setLowF(results.getInt("low"));
+		theWeather.setHighF(results.getInt("high"));
+		theWeather.setLowC((results.getInt("low")-32)*5/9);
+		theWeather.setHighC((results.getInt("high")-32)*5/9);
 		theWeather.setForecast(results.getString("forecast"));
-
 		return theWeather;
 	}
 

@@ -3,13 +3,29 @@ package com.techelevator.npgeek.parks.model;
 public class Weather {
 	private String parkCode;
 	private int fiveDayForecastValue;
-	private int low;
-	private int high;
+	private int lowF;
+	private int highF;
+	private int lowC;
+	private int highC;
+
+	public int getLowC() {
+		return lowC;
+	}
+	public void setLowC(int lowC) {
+		this.lowC = lowC;
+	}
+	public int getHighC() {
+		return highC;
+	}
+	public void setHighC(int highC) {
+		this.highC = highC;
+	}
+
 	private String forecast;
-	
+
 	public String getParkCode() {
 		return parkCode;
-		
+
 	}
 	public void setParkCode(String parkCode) {
 		this.parkCode = parkCode;
@@ -20,17 +36,17 @@ public class Weather {
 	public void setFiveDayForecastValue(int fiveDayForecastValue) {
 		this.fiveDayForecastValue = fiveDayForecastValue;
 	}
-	public int getLow() {
-		return low;
+	public int getLowF() {
+		return lowF;
 	}
-	public void setLow(int low) {
-		this.low = low;
+	public void setLowF(int lowF) {
+		this.lowF = lowF;
 	}
-	public int getHigh() {
-		return high;
+	public int getHighF() {
+		return highF;
 	}
-	public void setHigh(int high) {
-		this.high = high;
+	public void setHighF(int highF) {
+		this.highF = highF;
 	}
 	public String getForecast() {
 		return forecast;
@@ -38,5 +54,5 @@ public class Weather {
 	public void setForecast(String forecast) {
 		this.forecast = forecast;
 	}
-	
+
 }
