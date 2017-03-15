@@ -25,10 +25,12 @@ header {
 	bottom: 25px;
 	border-radius: 5px;
 	padding: 0px 50px 0px 50px;
+	border: solid 1px black;
 }
 
 #survey-link-text{
 	color: white;
+	font-family: "Ariel";
 	underline: none;
 }
 
@@ -51,6 +53,8 @@ section {
 .park-list-img {
 	width: 100%;
 	height: 100%;
+	border: solid 1px black;
+	border-radius: 5px;
 }
 
 .park-list-snippet-div {
@@ -60,4 +64,22 @@ section {
 	padding-left: 10px;
 	width: 70%;
 	background-color: white;
+<<<<<<< HEAD
+	border: solid 1px black;
+	border-radius: 5px;
+=======
+}
+
+#survey-list-main-div{
+	width:50%;
+	height: 300px;
+	padding: 50px;
+	font-size:14px;
+	position: absolute;
+    top:250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+>>>>>>> 27d6f7f344796001f16ccbeac131b86592fab9c9
 }
