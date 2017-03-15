@@ -19,7 +19,7 @@
 			</div>
 			<div class="park-list-snippet-div">
 				<h3><c:out value="${park.parkName}"/></h3>
-				<p><c:out value="${park.parkName}"/></p>
+				<p><c:out value="${park.state}"/></p>
 				<p><c:out value="${park.description}"/></p>
 			</div>
 		</div>
