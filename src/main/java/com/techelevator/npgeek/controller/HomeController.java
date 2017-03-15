@@ -32,5 +32,13 @@ public class HomeController {
 		request.setAttribute("park", parkDao.getParkByParkCode(parkCode));
 		return "parkInfo";
 	}
+	
+	@RequestMapping(path={"/survey"}, method=RequestMethod.GET)
+	public String showSurveyPage(HttpServletRequest request) {
+		List<Park> parkList = parkDao.getAllParks();
+		request.setAttribute("parks", parkList);
+		return "survey";
+	}
+	
 
 }
