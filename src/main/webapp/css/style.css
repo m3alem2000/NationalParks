@@ -14,7 +14,6 @@ section {
 
 .park-list-div {
 	width: 80%;
-	height: 200px;
 	margin: auto;
 	padding: 10px;
 }
@@ -36,6 +35,5 @@ section {
 	margin-left: 10px;
 	padding-left: 10px;
 	width: 70%;
-	height: 200px;
 	background-color: white;
 }
