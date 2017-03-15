@@ -27,10 +27,10 @@ public class HomeController {
 		return "home";
 	}
 	
-//	@RequestMapping(path={"/parkInfo"}, method=RequestMethod.GET)
-//	public String showParkInfoPage(HttpServletRequest request, @RequestParam String parkCode) {
-//		request.setAttribute("park", parkDao.getParkByParkCode(parkCode));
-//		return "parkInfo";
-//	}
+	@RequestMapping(path={"/parkInfo"}, method=RequestMethod.GET)
+	public String showParkInfoPage(HttpServletRequest request, @RequestParam String parkCode) {
+		request.setAttribute("park", parkDao.getParkByParkCode(parkCode));
+		return "parkInfo";
+	}
 
 }

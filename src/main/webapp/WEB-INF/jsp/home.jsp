@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
@@ -6,14 +7,15 @@
 	<c:forEach var="park" items="${parks}">
 	<div class="park-list-div">
 		<div class="park-list-img-div">
-			<c:set value="enp" var="parkCode"/>
-			<c:url value="/img/parks/${parkCode}.jpg" var="parkImgSrc"/>
+		<c:set value="${park.parkCode}" var="parkCode"/>
+			<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower"/>
+			<c:url value="/img/parks/${parkCodeLower}.jpg" var="parkImgSrc"/>
 			<img class="park-list-img" src="${parkImgSrc}"/>
 		</div>
 		<div class="park-list-snippet-div">
-			<h3>Example National Park</h3>
-			<p>Somewhere, Some State</p>
-			<p>Here is a short summary of the park</p>
+			<h3>${park.parkName}</h3>
+			<p>${park.parkName}</p>
+			<p>${park.description}</p>
 		</div>
 	</div>
 	</c:forEach>
