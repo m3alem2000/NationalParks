@@ -1,22 +1,21 @@
 package com.techelevator.npgeek.parks.model;
 
 public class Survey {
-	
+
 	private int surveyId;
 	private String parkCode;
 	private String emailAddress;
 	private String state;
 	private String activityLevel;
 	private int votes;
-	
+
 	public int getVotes() {
 		return votes;
 	}
 	public void setVotes(int votes) {
 		this.votes = votes;
 	}
-	
-public int getSurveyId() {
+	public int getSurveyId() {
 		return surveyId;
 	}
 	public void setSurveyId(int surveyId) {

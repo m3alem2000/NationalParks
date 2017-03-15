@@ -4,7 +4,7 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
 <section>
-<form action="surveyInput" method="POST">
+<form action="survey" method="POST">
 	<div id="survey-list-main-div">
 		<table>
 		  <tr>
@@ -13,9 +13,9 @@
 		  <tr>
 		  <td align="right"><strong>Select a Park</strong></td>
 		   <td>
-			<select name="parkName">
+			<select name="parkCode">
 				<c:forEach var="park" items="${parks}">
-				  <option value="${park.parkName}">${park.parkName}</option>
+				  <option value="${park.parkCode}">${park.parkName}</option>
 				</c:forEach>
 			</select>
 			</td>
@@ -26,7 +26,7 @@
 		  <tr>
 			<td align="right"><strong>E-mail</strong></td>
 			<td>
-			<input type="text" name="email" id="email">
+			<input type="text" name="emailAddress" id="emailAddress">
 			</td>
 		  </tr>
 		  <tr>
@@ -34,7 +34,7 @@
 				<label for="state"><strong>State</strong> </label>
 			</td>
 			<td>
-			<select>
+			<select name="state" id="state">
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
 				<option value="AZ">Arizona</option>
@@ -92,7 +92,7 @@
 		  		  <tr>
 		  	<td align="right"><strong>Activity Level</strong></td>
 		  	<td>			
-		  	  <select>
+		  	  <select name="activityLevel" id="activityLevel">
 				<option value="inactive">Inactive</option>
 				<option value="sedentary">Sedentary</option>
 				<option value="active">Active</option>

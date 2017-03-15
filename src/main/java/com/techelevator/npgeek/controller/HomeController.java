@@ -1,4 +1,5 @@
 package com.techelevator.npgeek.controller;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.techelevator.npgeek.parks.model.Park;
 import com.techelevator.npgeek.parks.model.ParkDAO;
+import com.techelevator.npgeek.parks.model.Survey;
+import com.techelevator.npgeek.parks.model.SurveyDAO;
 
 @Controller
 @SessionAttributes("tempPreference")
@@ -19,6 +22,8 @@ public class HomeController {
 	
 	@Autowired
 	private ParkDAO parkDao;
+	@Autowired
+	private SurveyDAO surveyDao;
 	
 	@RequestMapping(path={"/", "/home"}, method=RequestMethod.GET)
 	public String showHomePage(HttpServletRequest request) {
@@ -40,5 +45,10 @@ public class HomeController {
 		return "survey";
 	}
 	
+	@RequestMapping(path={"/survey"}, method=RequestMethod.POST)
+	public String addSurveyToDB(Survey theSurvey) {
+		surveyDao.addSurvey(theSurvey);
+		return "redirect:/home";
+	}
 
 }

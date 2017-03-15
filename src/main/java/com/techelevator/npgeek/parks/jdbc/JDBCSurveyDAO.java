@@ -4,16 +4,20 @@ import java.util.ArrayList;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import com.techelevator.npgeek.parks.model.Survey;
 import com.techelevator.npgeek.parks.model.SurveyDAO;
 
+@Component
 public class JDBCSurveyDAO implements SurveyDAO {
 	
 	private JdbcTemplate jdbcTemplate;
 	
+	@Autowired
 	public JDBCSurveyDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
@@ -45,10 +49,10 @@ public class JDBCSurveyDAO implements SurveyDAO {
 	}
 
 	@Override
-	public void addSurvey(String parkCode, String emailAddress, String state, String activityLevel) {
+	public void addSurvey(Survey theSurvey) {
 		String sqlSurvey = "insert into survey_result (parkcode, emailaddress, state, activitylevel) " +
 							"values (?,?,?,?)";
-		jdbcTemplate.update(sqlSurvey, parkCode, emailAddress, state, activityLevel);
+		jdbcTemplate.update(sqlSurvey, theSurvey.getParkCode(), theSurvey.getEmailAddress(), theSurvey.getState(), theSurvey.getActivityLevel());
 		
 	}
 	

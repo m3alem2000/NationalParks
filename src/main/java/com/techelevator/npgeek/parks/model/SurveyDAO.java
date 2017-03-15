@@ -6,5 +6,5 @@ public interface SurveyDAO {
 
 	public ArrayList<Survey> getAllSurveys();
 	public Survey getTopSurveyPark();
-	public void addSurvey(String parkCode, String emailAddress, String state, String activityLevel);
+	public void addSurvey(Survey theSurvey);
 }
