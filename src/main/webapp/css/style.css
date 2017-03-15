@@ -1,11 +1,37 @@
 header {
+	position: relative;
 	background-color: #008040;
 	border-radius: 5px;
+	min-width: 750px;
 }
 
 #home-page-logo {
-	width: 400x;
-	height: 200px;
+	min-width: 400x;
+	max-width: 80%;
+	min-height: 200px;
+	max-height: 60%;
+	z-index: -1;
+}
+
+#survey-link-anchor {
+	display: block;
+	color: white;
+}
+
+#survey-link {
+	position: absolute;
+	background-color: #804000;
+	right: 100px;
+	bottom: 25px;
+	border-radius: 5px;
+	padding: 0px 50px 0px 50px;
+	border: solid 1px black;
+}
+
+#survey-link-text{
+	color: white;
+	font-family: "Ariel";
+	underline: none;
 }
 
 section {
@@ -27,6 +53,8 @@ section {
 .park-list-img {
 	width: 100%;
 	height: 100%;
+	border: solid 1px black;
+	border-radius: 5px;
 }
 
 .park-list-snippet-div {
@@ -36,4 +64,19 @@ section {
 	padding-left: 10px;
 	width: 70%;
 	background-color: white;
+	border: solid 1px black;
+	border-radius: 5px;
+}
+
+#survey-list-main-div{
+	width:50%;
+	height: 300px;
+	padding: 50px;
+	font-size:14px;
+	position: absolute;
+    top:250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
