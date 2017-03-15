@@ -1,4 +1,4 @@
-package parks.jdbc;
+package com.techelevator.npgeek.parks.jdbc;
 
 import java.util.ArrayList;
 
@@ -7,8 +7,8 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
-import parks.model.Survey;
-import parks.model.SurveyDAO;
+import com.techelevator.npgeek.parks.model.Survey;
+import com.techelevator.npgeek.parks.model.SurveyDAO;
 
 public class JDBCSurveyDAO implements SurveyDAO {
 	

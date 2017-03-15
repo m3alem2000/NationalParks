@@ -3,6 +3,7 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
 <section>
+	<c:forEach var="park" items="${parks}">
 	<div class="park-list-div">
 		<div class="park-list-img-div">
 			<c:set value="enp" var="parkCode"/>
@@ -15,7 +16,7 @@
 			<p>Here is a short summary of the park</p>
 		</div>
 	</div>
-
+	</c:forEach>
 </section>
 
 
