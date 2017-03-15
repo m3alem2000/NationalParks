@@ -1,4 +1,4 @@
-package parks.model;
+package com.techelevator.npgeek.parks.model;
 
 public class Survey {
 	

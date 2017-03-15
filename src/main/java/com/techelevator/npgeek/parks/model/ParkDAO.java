@@ -1,9 +1,10 @@
-package parks.model;
+package com.techelevator.npgeek.parks.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface ParkDAO {
 	
-	public ArrayList<Park> getAllParks();
+	public List<Park> getAllParks();
 	public Park getParkByParkCode(String parkCode);
 }

@@ -1,19 +1,23 @@
-package parks.jdbc;
+package com.techelevator.npgeek.parks.jdbc;
 
 import java.util.ArrayList;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
-import parks.model.Park;
-import parks.model.ParkDAO;
+import com.techelevator.npgeek.parks.model.Park;
+import com.techelevator.npgeek.parks.model.ParkDAO;
 
+@Component
 public class JDBCParkDAO implements ParkDAO {
 
 	private JdbcTemplate jdbcTemplate;
 	
+	@Autowired
 	public JDBCParkDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}

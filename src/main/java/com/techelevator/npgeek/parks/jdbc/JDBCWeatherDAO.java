@@ -1,4 +1,4 @@
-package parks.jdbc;
+package com.techelevator.npgeek.parks.jdbc;
 
 import java.util.ArrayList;
 
@@ -7,9 +7,9 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
-import parks.model.Park;
-import parks.model.Weather;
-import parks.model.WeatherDAO;
+import com.techelevator.npgeek.parks.model.Park;
+import com.techelevator.npgeek.parks.model.Weather;
+import com.techelevator.npgeek.parks.model.WeatherDAO;
 
 public class JDBCWeatherDAO implements WeatherDAO {
 
