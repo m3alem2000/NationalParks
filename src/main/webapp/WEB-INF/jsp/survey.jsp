@@ -100,6 +100,10 @@
 			  </select>
 			  </td>
 		  </tr>
+		  <tr><br></tr>
+		  <tr><td></td>
+		  <td><input id="formSubmitButton" type="submit" value="Submit"></td>
+		  </tr>
 		</table>
 	</div>
 </form>
