@@ -25,6 +25,7 @@ public class HomeController {
 	private ParkDAO parkDao;
 	@Autowired
 	private SurveyDAO surveyDao;
+	@Autowired
 	private WeatherDAO weatherDao;
 	
 	@RequestMapping(path={"/", "/home"}, method=RequestMethod.GET)
