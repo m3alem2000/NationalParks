@@ -3,7 +3,10 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
+<div>
+	<c:out value="${weather.forecast}"/>
 
+</div>
 
 
 

@@ -7,6 +7,7 @@ public class Weather {
 	private int highF;
 	private int lowC;
 	private int highC;
+	private String forecast;
 
 	public int getLowC() {
 		return lowC;
@@ -21,11 +22,8 @@ public class Weather {
 		this.highC = highC;
 	}
 
-	private String forecast;
-
 	public String getParkCode() {
 		return parkCode;
-
 	}
 	public void setParkCode(String parkCode) {
 		this.parkCode = parkCode;
