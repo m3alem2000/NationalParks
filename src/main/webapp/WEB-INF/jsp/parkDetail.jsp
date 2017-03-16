@@ -43,8 +43,6 @@
 				
 				<c:if test="${weather.forecast == 'cloudy'}">
 					<c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />
-					<a href="${detailWeather}"><img class="weatherImgSrc"  src="${weatherImgSrc}"></a>
-					
 				</c:if>
 				<c:if test="${weather.forecast == 'partly cloudy'}">
 					<c:url value="./img/weather/partlyCloudy.png" var="weatherImgSrc" />
@@ -65,6 +63,7 @@
 		
 			<c:url value="/weatherDetail" var="weatherDetailUrl">
 			<c:param name="fiveDayForecastValue" value="${weather.fiveDayForecastValue}"/>
+			<c:param name="parkCode" value="${weather.parkCode}"/>
 			</c:url>
 			<a href="${weatherDetailUrl}"><img class="weatherImgSrc" src="${weatherImgSrc}" /></a>
 			<div class="weather-detail">
