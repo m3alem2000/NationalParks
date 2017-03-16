@@ -28,7 +28,7 @@ header {
 	border: solid 1px black;
 }
 
-#survey-link-text{
+#survey-link-text {
 	color: white;
 	font-family: "Ariel";
 	underline: none;
@@ -68,15 +68,45 @@ section {
 	border-radius: 5px;
 }
 
-#survey-list-main-div{
-	width:50%;
+#survey-list-main-div {
+	width: 50%;
 	height: 300px;
 	padding: 50px;
-	font-size:14px;
+	font-size: 14px;
 	position: absolute;
-    top:250px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+	top: 250px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+#detail-title {
+	text-align: center;
+	 font-size: 200%;
+}
+
+.detail-pic-and-quote {
+	display: inline-block;
+	text-align: right;
+	width: 499px;
+	position: relative;
+    left: 100px;
+}
+
+.park-image-detail {
+	
+}
+
+#inspirational-quote {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-style: italic;
+}
+
+#inspirational-quote-source {
+	margin: 0;
+	padding: 0;
+	 font-size: 80%;
 }
