@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import com.techelevator.npgeek.parks.model.Park;
 import com.techelevator.npgeek.parks.model.Survey;
 import com.techelevator.npgeek.parks.model.SurveyDAO;
 
@@ -16,7 +17,8 @@ import com.techelevator.npgeek.parks.model.SurveyDAO;
 public class JDBCSurveyDAO implements SurveyDAO {
 	
 	private JdbcTemplate jdbcTemplate;
-	
+	Park thePark = null;
+	private JDBCParkDAO jdbcParkDao;
 	@Autowired
 	public JDBCSurveyDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
@@ -37,12 +39,11 @@ public class JDBCSurveyDAO implements SurveyDAO {
 	@Override
 	public Survey getTopSurveyPark() {
 		Survey theSurvey = null;
-		String sqlFindTopSurveyResults = "select count(parkcode) as votes, parkcode from survey_result" +
-										"group by parkcode order by parkcode desc limit 1";
+		String sqlFindTopSurveyResults = "select count(parkcode) as votes, parkcode from survey_result group by parkcode order by parkcode limit 1";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindTopSurveyResults);
 		if(results.next()) {
-			theSurvey = mapRowToSurvey(results);
-		
+			theSurvey = mapRowToSurveyCount(results);
+//			thePark = jdbcParkDao.getParkByParkCode(theSurvey.getParkCode());
 		}
 	return theSurvey;
 
@@ -64,9 +65,16 @@ public class JDBCSurveyDAO implements SurveyDAO {
 		theSurvey.setEmailAddress(results.getString("emailaddress"));
 		theSurvey.setState(results.getString("state"));
 		theSurvey.setActivityLevel(results.getString("activitylevel"));
+		
+		return theSurvey;
+	}
+	
+	private Survey mapRowToSurveyCount(SqlRowSet results) {
+		Survey theSurvey;
+		theSurvey = new Survey();
+		theSurvey.setParkCode(results.getString("parkcode"));
 		theSurvey.setVotes(results.getInt("votes"));
 		
 		return theSurvey;
 	}
-
 }

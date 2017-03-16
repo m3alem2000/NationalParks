@@ -69,7 +69,15 @@ public class HomeController {
 		}else{
 		surveyDao.addSurvey(theSurvey);
 		}
-		return "redirect:/home";
+		return "redirect:/surveyDetail";
 	}
-
+	
+	@RequestMapping(path={"/surveyDetail"}, method=RequestMethod.GET)
+	public String showSurveyDetailPage(HttpServletRequest request) {
+		Survey theSurvey = surveyDao.getTopSurveyPark();
+		Park	 thePark = parkDao.getParkByParkCode(theSurvey.getParkCode());
+		request.setAttribute("park", thePark);
+		request.setAttribute("survey", theSurvey);
+		return "surveyDetail";
+	}
 }

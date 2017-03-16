@@ -8,7 +8,6 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
-import com.techelevator.npgeek.parks.model.Park;
 import com.techelevator.npgeek.parks.model.Weather;
 import com.techelevator.npgeek.parks.model.WeatherDAO;
 
