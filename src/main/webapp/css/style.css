@@ -91,11 +91,17 @@ section {
 	text-align: right;
 	width: 499px;
 	position: relative;
-    left: 100px;
+    left: 240px;
 }
 
 .park-image-detail {
 	
+}
+
+.park-detail-description{
+font-size: 150%;
+padding-left: 50px;
+padding-right: 50px;
 }
 
 #inspirational-quote {
@@ -109,4 +115,21 @@ section {
 	margin: 0;
 	padding: 0;
 	 font-size: 80%;
+}
+
+.weatherImgSrc{
+	width: 120px;
+	height: 120px;
+}
+
+.five-day-forecast{
+	width: 100%;
+	padding-right: 50px;
+	position: relative;
+}
+.each-day-forecast {
+	width: 120px;
+
+	display:inline-block;
+	
 }
