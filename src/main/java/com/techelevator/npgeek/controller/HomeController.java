@@ -46,8 +46,20 @@ public class HomeController {
 	}
 	
 	@RequestMapping(path={"/survey"}, method=RequestMethod.POST)
-	public String addSurveyToDB(Survey theSurvey) {
+	public String addSurveyToDB(Survey theSurvey, HttpServletRequest request) {
+		if(theSurvey.getEmailAddress()=="" || !(theSurvey.getEmailAddress().contains("@")) || !(theSurvey.getEmailAddress().contains("."))){
+			request.setAttribute("flag","false");
+			request.setAttribute("email", theSurvey.getEmailAddress());
+			request.setAttribute("parkCode",theSurvey.getParkCode());
+			request.setAttribute("state",theSurvey.getState());
+			request.setAttribute("activityLevel",theSurvey.getActivityLevel());
+
+			List<Park> parkList = parkDao.getAllParks();
+			request.setAttribute("parks", parkList);
+			return "survey";
+		}else{
 		surveyDao.addSurvey(theSurvey);
+		}
 		return "redirect:/home";
 	}
 

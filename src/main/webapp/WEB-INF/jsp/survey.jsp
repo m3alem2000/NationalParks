@@ -7,15 +7,19 @@
 <form action="survey" method="POST">
 	<div id="survey-list-main-div">
 		<table>
+		  <tr><td></td>
+		  	<td><h1>Survey</h1></td>
+		  </tr>
 		  <tr>
-		  	<td><h1>Survey</td></h1>
+		  	<td></td>
+		  	<c:if test="${flag==false}"><td style="color:red">Please fill all fields</td></c:if>
 		  </tr>
 		  <tr>
 		  <td align="right"><strong>Select a Park</strong></td>
 		   <td>
 			<select name="parkCode">
 				<c:forEach var="park" items="${parks}">
-				  <option value="${park.parkCode}">${park.parkName}</option>
+				  		<option value="${park.parkCode}"<c:if test="${park.parkCode==parkCode}">selected</c:if>>${park.parkName}</option>
 				</c:forEach>
 			</select>
 			</td>
@@ -26,7 +30,12 @@
 		  <tr>
 			<td align="right"><strong>E-mail</strong></td>
 			<td>
+			<c:if test="${flag==false}">
+			<input style="border: 2px solid #CD0A0A;" type="text" name="emailAddress" id="emailAddress" value="${email}">
+			</c:if>
+			<c:if test="${flag!=false}">
 			<input type="text" name="emailAddress" id="emailAddress">
+			</c:if>
 			</td>
 		  </tr>
 		  <tr>
@@ -89,18 +98,19 @@
 			</select>	
 			</td>
 		  </tr>
+		  
 		  		  <tr>
 		  	<td align="right"><strong>Activity Level</strong></td>
 		  	<td>			
 		  	  <select name="activityLevel" id="activityLevel">
-				<option value="inactive">Inactive</option>
-				<option value="sedentary">Sedentary</option>
-				<option value="active">Active</option>
-				<option value="extremely active">Extremely Active</option>
+				<option value="inactive"<c:if test="${activityLevel=='inactive'}">selected</c:if>>Inactive</option>
+				<option value="sedentary"<c:if test="${activityLevel=='sedentary'}">selected</c:if>>Sedentary</option>
+				<option value="active"<c:if test="${activityLevel=='active'}">selected</c:if>>Active</option>
+				<option value="extremely active"<c:if test="${activityLevel=='extremely active'}">selected</c:if>>Extremely Active</option>
 			  </select>
 			  </td>
 		  </tr>
-		  <tr><br></tr>
+		  <tr><td><br></td><td></td></tr>
 		  <tr><td></td>
 		  <td><input id="formSubmitButton" type="submit" value="Submit"></td>
 		  </tr>
