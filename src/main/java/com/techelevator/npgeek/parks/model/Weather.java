@@ -52,5 +52,13 @@ public class Weather {
 	public void setForecast(String forecast) {
 		this.forecast = forecast;
 	}
+	
+	public String getForecastPngString() {
+		if (forecast.equals("partly cloudy")) {
+			return "partlyCloudy";
+		} else {
+			return forecast;
+		}
+	}
 
 }
