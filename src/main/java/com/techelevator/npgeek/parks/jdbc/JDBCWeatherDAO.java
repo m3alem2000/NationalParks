@@ -1,6 +1,7 @@
 package com.techelevator.npgeek.parks.jdbc;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -20,11 +21,11 @@ public class JDBCWeatherDAO implements WeatherDAO {
 	}
 
 	@Override
-	public ArrayList<Weather> getWeatherByParkCode() {
+	public List<Weather> getWeatherByParkCode(String parkCode) {
 
-		String sqlFindWeatherByFiveDayForecast = "select * from weather order by fivedayforecastvalue";
-		ArrayList<Weather> fiveDayWeather = new ArrayList<Weather>();
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindWeatherByFiveDayForecast);
+		String sqlFindWeatherByFiveDayForecast = "select * from weather where parkcode = ? order by fivedayforecastvalue";
+		List<Weather> fiveDayWeather = new ArrayList<Weather>();
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindWeatherByFiveDayForecast, parkCode);
 		while(results.next()) {
 			Weather weatherForecast = mapRowToWeather(results);
 			fiveDayWeather.add(weatherForecast);

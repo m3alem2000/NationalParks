@@ -15,6 +15,7 @@ import com.techelevator.npgeek.parks.model.Park;
 import com.techelevator.npgeek.parks.model.ParkDAO;
 import com.techelevator.npgeek.parks.model.Survey;
 import com.techelevator.npgeek.parks.model.SurveyDAO;
+import com.techelevator.npgeek.parks.model.WeatherDAO;
 
 @Controller
 @SessionAttributes("tempPreference")
@@ -24,6 +25,7 @@ public class HomeController {
 	private ParkDAO parkDao;
 	@Autowired
 	private SurveyDAO surveyDao;
+	private WeatherDAO weatherDao;
 	
 	@RequestMapping(path={"/", "/home"}, method=RequestMethod.GET)
 	public String showHomePage(HttpServletRequest request) {
@@ -35,7 +37,14 @@ public class HomeController {
 	@RequestMapping(path={"/parkDetail"}, method=RequestMethod.GET)
 	public String showParkInfoPage(HttpServletRequest request, @RequestParam String parkCode) {
 		request.setAttribute("park", parkDao.getParkByParkCode(parkCode));
+		request.setAttribute("weatherForecast", weatherDao.getWeatherByParkCode(parkCode));
 		return "parkDetail";
+	}
+	
+	@RequestMapping(path={"/weatherDetail"}, method=RequestMethod.GET)
+	public String showWeatherDetailPage(HttpServletRequest request, @RequestParam String parkCode) {
+		request.setAttribute("weather", weatherDao.getWeatherByParkCode(parkCode));
+		return "weatherDetail";
 	}
 	
 	@RequestMapping(path={"/survey"}, method=RequestMethod.GET)
