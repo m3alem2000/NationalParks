@@ -1,5 +1,6 @@
 package com.techelevator.npgeek.controller;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,7 @@ import com.techelevator.npgeek.parks.model.Park;
 import com.techelevator.npgeek.parks.model.ParkDAO;
 import com.techelevator.npgeek.parks.model.Survey;
 import com.techelevator.npgeek.parks.model.SurveyDAO;
+import com.techelevator.npgeek.parks.model.Weather;
 import com.techelevator.npgeek.parks.model.WeatherDAO;
 
 @Controller
@@ -25,6 +27,7 @@ public class HomeController {
 	private ParkDAO parkDao;
 	@Autowired
 	private SurveyDAO surveyDao;
+	@Autowired
 	private WeatherDAO weatherDao;
 	
 	@RequestMapping(path={"/", "/home"}, method=RequestMethod.GET)
@@ -42,8 +45,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(path={"/weatherDetail"}, method=RequestMethod.GET)
-	public String showWeatherDetailPage(HttpServletRequest request, @RequestParam String parkCode) {
-		request.setAttribute("weather", weatherDao.getWeatherByParkCode(parkCode));
+	public String showWeatherDetailPage(HttpServletRequest request, @RequestParam String parkCode, @RequestParam int fiveDayForecastValue) {
+		List<Weather> weatherForecast = weatherDao.getWeatherByParkCode(parkCode);
+		request.setAttribute("weather", weatherForecast.get(fiveDayForecastValue - 1));
 		return "weatherDetail";
 	}
 	
