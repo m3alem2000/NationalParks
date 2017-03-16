@@ -42,8 +42,11 @@
 				
 				<c:if test="${weather.forecast == 'snow'}">
 					<c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />
+<<<<<<< HEAD
 					<img class="weatherImgSrc"  src="${weatherImgSrc}">
 					
+=======
+>>>>>>> e4988e7eae77142067cbea33f83004cd5c6196b5
 				</c:if>
 				<c:if test="${weather.forecast == 'partly cloudy'}">
 					<c:url value="./img/weather/partlyCloudy.png" var="weatherImgSrc" />
@@ -69,7 +72,12 @@
 			
 		
 			<c:url value="/weatherDetail" var="weatherDetailUrl">
+<<<<<<< HEAD
 			<c:param name="fiveDavForecastValue" value="${weather.fiveDavForecastValue}"/>
+=======
+			<c:param name="fiveDayForecastValue" value="${weather.fiveDayForecastValue}"/>
+			<c:param name="parkCode" value="${weather.parkCode}"/>
+>>>>>>> e4988e7eae77142067cbea33f83004cd5c6196b5
 			</c:url>
 			<a href="${weatherDetailUrl}"><img class="weather-detail-img"
 				src="${weatherImgSrc}" /></a>
