@@ -36,31 +36,51 @@
 	<h1>Make sure to check out the weather forecast before you visit!</h1>
 	</div>
 
-	<div class="five-day-forecast">
+	<div id="five-day-forecast">
 		<c:forEach var="weather" items="${weatherForecast}">
+<<<<<<< HEAD
 			<div class="each-day-forecast">
 				<c:set value="${weather.parkCode}" var="parkCode" />
 				<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
 
 
 				<c:if test="${weather.forecast == 'cloudy'}">
+=======
+			<c:set value="${weather.parkCode}" var="parkCode" />
+			<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
+			
+				
+				<c:if test="${weather.forecast == 'snow'}">
+>>>>>>> a50f683953af2815b9822d5571b6cb2ab61f5c75
 					<c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />
+<<<<<<< HEAD
+					<img class="weatherImgSrc"  src="${weatherImgSrc}">
+					
+=======
+>>>>>>> e4988e7eae77142067cbea33f83004cd5c6196b5
 				</c:if>
 				<c:if test="${weather.forecast == 'partly cloudy'}">
 					<c:url value="./img/weather/partlyCloudy.png" var="weatherImgSrc" />
+					<img class="weatherImgSrc" src="${weatherImgSrc}">
 				</c:if>
 				<c:if test="${weather.forecast == 'rain'}">
 					<c:url value="./img/weather/rain.png" var="weatherImgSrc" />
+					<img class="weatherImgSrc" src="${weatherImgSrc}">
 				</c:if>
 				<c:if test="${weather.forecast == 'snow'}">
 					<c:url value="./img/weather/snow.png" var="weatherImgSrc" />
+					<img class="weatherImgSrc" src="${weatherImgSrc}">
 				</c:if>
 				<c:if test="${weather.forecast == 'sunny'}">
 					<c:url value="./img/weather/sunny.png" var="weatherImgSrc" />
+					<img class="weatherImgSrc" src="${weatherImgSrc}">
 				</c:if>
-				<c:if test="${weather.forecast == 'thunderstorms'}">
-					<c:url value="./img/weather/thunderstorms.png" var="weatherImgSrc" />
+				<c:if test="${weather.forecast == 'sunny'}">
+					<c:url value="./img/weather/thunderstorms.png"
+						var="weatherImgSrc" />
+						<img class="weatherImgSrc" src="${weatherImgSrc}">
 				</c:if>
+<<<<<<< HEAD
 
 
 				<c:url value="/weatherDetail" var="weatherDetailUrl">
@@ -82,12 +102,34 @@
 						<c:out value="High temp: ${weather.highF}°F" />
 					</p>
 				</div>
+=======
+			
+		
+			<c:url value="/weatherDetail" var="weatherDetailUrl">
+<<<<<<< HEAD
+			<c:param name="fiveDavForecastValue" value="${weather.fiveDavForecastValue}"/>
+=======
+			<c:param name="fiveDayForecastValue" value="${weather.fiveDayForecastValue}"/>
+			<c:param name="parkCode" value="${weather.parkCode}"/>
+>>>>>>> e4988e7eae77142067cbea33f83004cd5c6196b5
+			</c:url>
+			<a href="${weatherDetailUrl}"><img class="weather-detail-img"
+				src="${weatherImgSrc}" /></a>
+			<div class="weather-detail">
+				<h3>
+					<c:out value="${weather.fiveDayForecastValue}" />
+				</h3>
+				<p>
+					<c:out value="${weather.lowF}" />
+				</p>
+				<p>
+					<c:out value="${weather.highF}" />
+				</p>
+>>>>>>> a50f683953af2815b9822d5571b6cb2ab61f5c75
 			</div>
 		</c:forEach>
 	</div>
 
 </section>
-
-
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
