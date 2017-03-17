@@ -4,6 +4,7 @@ import org.openqa.selenium.By.ById;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.techelevator.npgeek.pageobject.ParkDetailPage;
 import com.techelevator.npgeek.pageobject.SurveyInputPage;
 
 public class HomePage {
@@ -18,6 +19,12 @@ public class HomePage {
 		WebElement link = webDriver.findElement(By.id("survey-link-text"));
 		link.click();
 		return new SurveyInputPage(webDriver);
+		}
+	
+	public ParkDetailPage clickOnPark(String parkCode){
+		WebElement link = webDriver.findElement(By.id(parkCode));
+		link.click();
+		return new ParkDetailPage(webDriver);
 		}
 }
 
