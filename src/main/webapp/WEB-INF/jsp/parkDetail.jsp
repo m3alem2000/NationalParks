@@ -32,15 +32,17 @@
 			around ${park.annualVisitors} visitors every year, who can choose
 			from ${park.numberOfCampSites} different camp sites.</p>
 	</div>
-
+	<div class="invitation">
+	<h1>Make sure to check out the weather forecast before you visit!</h1>
+	</div>
 
 	<div class="five-day-forecast">
 		<c:forEach var="weather" items="${weatherForecast}">
-		<div class="each-day-forecast">
-			<c:set value="${weather.parkCode}" var="parkCode" />
-			<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
-			
-				
+			<div class="each-day-forecast">
+				<c:set value="${weather.parkCode}" var="parkCode" />
+				<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
+
+
 				<c:if test="${weather.forecast == 'cloudy'}">
 					<c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />
 				</c:if>
@@ -59,25 +61,27 @@
 				<c:if test="${weather.forecast == 'thunderstorms'}">
 					<c:url value="./img/weather/thunderstorms.png" var="weatherImgSrc" />
 				</c:if>
-			
-		
-			<c:url value="/weatherDetail" var="weatherDetailUrl">
-			<c:param name="fiveDayForecastValue" value="${weather.fiveDayForecastValue}"/>
-			<c:param name="parkCode" value="${weather.parkCode}"/>
-			</c:url>
-			<a href="${weatherDetailUrl}"><img class="weatherImgSrc" src="${weatherImgSrc}" /></a>
-			<div class="weather-detail">
-				
-				<h3>
-					<c:out value="Date: ${weather.fiveDayForecastValue}" />
-				</h3>
-				<p>
-					<c:out value="Low temp: ${weather.lowF}°F" />
-				</p>
-				<p>
-					<c:out value="High temp: ${weather.highF}°F" />
-				</p>
-			</div>
+
+
+				<c:url value="/weatherDetail" var="weatherDetailUrl">
+					<c:param name="fiveDayForecastValue"
+						value="${weather.fiveDayForecastValue}" />
+					<c:param name="parkCode" value="${weather.parkCode}" />
+				</c:url>
+				<a href="${weatherDetailUrl}"><img class="weatherImgSrc"
+					src="${weatherImgSrc}" /></a>
+				<div class="weather-detail">
+
+					<h3>
+						<c:out value="Date: ${weather.fiveDayForecastValue}" />
+					</h3>
+					<p>
+						<c:out value="Low temp: ${weather.lowF}°F" />
+					</p>
+					<p>
+						<c:out value="High temp: ${weather.highF}°F" />
+					</p>
+				</div>
 			</div>
 		</c:forEach>
 	</div>
