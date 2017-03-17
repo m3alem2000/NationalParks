@@ -10,7 +10,7 @@
 	</div>
 	<c:forEach var="park" items="${parks}">
 		<div class="park-list-div">
-			<div class="park-list-img-div">
+			<div class="park-list-snippet-div">
 				<c:set value="${park.parkCode}" var="parkCode" />
 				<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
 				
@@ -18,10 +18,8 @@
 				<c:url value="/parkDetail" var="parkDetailUrl">
 					<c:param name="parkCode" value="${parkCode}" />
 				</c:url>
-				<a href="${parkDetailUrl}"><img class="park-list-img"
-					src="${parkImgSrc}" /></a>
-			</div>
-			<div class="park-list-snippet-div">
+				<a href="${parkDetailUrl}"><img class="park-list-img" src="${parkImgSrc}" /></a>
+
 				<h3><c:out value="${park.parkName}"/></h3>
 				<p><c:out value="${park.state}"/></p>
 				<p><c:out value="${park.description}"/></p>

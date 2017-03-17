@@ -56,7 +56,6 @@ section {
 	width: 25%;
 	height: 200px;
 	float: left;
-	float:left;
 }
 
 .park-list-img {
@@ -74,16 +73,18 @@ section {
 	display: inline-block;
 	vertical-align: top;
 	margin-left: 10px;
-	/* padding-left: 10px; */
-	/* width: 70%; */
 	background-color: #f3ffe6;
 	border: solid 1px black;
 	border-radius: 5px;
-	width: 100%%;
-	padding-left:300px;
-	padding-right:5px;
-	height:260px;
+	padding: 20px;
 	position:relative;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.park-list-snippet-div img {
+	float: left;
+	width: 300px;
 	margin-right: 10px;
 }
 
