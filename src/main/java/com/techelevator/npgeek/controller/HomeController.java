@@ -68,6 +68,19 @@ public class HomeController {
 		return "weatherDetail";
 	}
 	
+	@RequestMapping(path={"/weatherDetail"}, method=RequestMethod.POST)
+	public String switchTempConversion(HttpServletRequest request, @RequestParam boolean temp, @RequestParam String parkCode, @RequestParam int fiveDayForecastValue, ModelMap map) {
+		List<Weather> weatherForecast = weatherDao.getWeatherByParkCode(parkCode);
+		request.setAttribute("weather", weatherForecast.get(fiveDayForecastValue - 1));
+		request.setAttribute("park", parkDao.getParkByParkCode(parkCode));
+		if(map.get("tempSession").equals(null) || map.get("tempSession")==""){
+			map.put("tempSession", true);
+		}else{
+			map.put("tempSession", temp);
+		}
+		return "weatherDetail";
+	}
+	
 	@RequestMapping(path={"/survey"}, method=RequestMethod.GET)
 	public String showSurveyPage(HttpServletRequest request) {
 		List<Park> parkList = parkDao.getAllParks();
