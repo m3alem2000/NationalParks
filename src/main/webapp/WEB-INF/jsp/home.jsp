@@ -18,7 +18,7 @@
 				<c:url value="/parkDetail" var="parkDetailUrl">
 					<c:param name="parkCode" value="${parkCode}" />
 				</c:url>
-				<a href="${parkDetailUrl}"><img class="park-list-img" src="${parkImgSrc}" /></a>
+				<a href="${parkDetailUrl}"><img id="${parkCode}" class="park-list-img" src="${parkImgSrc}" /></a>
 
 				<h3><c:out value="${park.parkName}"/></h3>
 				<p><c:out value="${park.state}"/></p>
