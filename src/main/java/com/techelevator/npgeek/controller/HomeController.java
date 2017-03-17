@@ -35,7 +35,6 @@ public class HomeController {
 	public String showHomePage(HttpServletRequest request) {
 		List<Park> parkList = parkDao.getAllParks();
 		request.setAttribute("parks", parkList);
-
 		return "home";
 	}
 	
