@@ -65,6 +65,7 @@ public class HomeController {
 	public String showWeatherDetailPage(HttpServletRequest request, @RequestParam String parkCode, @RequestParam int fiveDayForecastValue) {
 		List<Weather> weatherForecast = weatherDao.getWeatherByParkCode(parkCode);
 		request.setAttribute("weather", weatherForecast.get(fiveDayForecastValue - 1));
+		request.setAttribute("park", parkDao.getParkByParkCode(parkCode));
 		return "weatherDetail";
 	}
 	

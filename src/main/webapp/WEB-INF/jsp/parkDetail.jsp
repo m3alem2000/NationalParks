@@ -1,4 +1,3 @@
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
@@ -15,11 +14,11 @@
 </div>
 
 <p id="inspirational-quote">
-    <c:out value="${park.inspirationalQuote}" />
+<c:out value="${park.inspirationalQuote}" />
 </p>
 
 <p id="inspirational-quote-source">
-    <c:out value="${park.inspirationalQuoteSource}" />
+<c:out value="${park.inspirationalQuoteSource}" />
 </p>
 </div>
 
@@ -56,45 +55,45 @@ from ${park.numberOfCampSites} different camp sites.</p>
 <c:set value="${weather.parkCode}" var="parkCode" />
 <c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
 
-        <c:if test="${weather.forecast == 'cloudy'}">
-            <c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />
-        </c:if>
-        <c:if test="${weather.forecast == 'partly cloudy'}">
-            <c:url value="./img/weather/partlyCloudy.png" var="weatherImgSrc" />
-        </c:if>
-        <c:if test="${weather.forecast == 'rain'}">
-            <c:url value="./img/weather/rain.png" var="weatherImgSrc" />
-        </c:if>
-        <c:if test="${weather.forecast == 'snow'}">
-            <c:url value="./img/weather/snow.png" var="weatherImgSrc" />
-        </c:if>
-        <c:if test="${weather.forecast == 'sunny'}">
-            <c:url value="./img/weather/sunny.png" var="weatherImgSrc" />
-        </c:if>
-        <c:if test="${weather.forecast == 'thunderstorms'}">
-            <c:url value="./img/weather/thunderstorms.png" var="weatherImgSrc" />
-        </c:if>
+    <c:if test="${weather.forecast == 'cloudy'}">
+        <c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />
+    </c:if>
+    <c:if test="${weather.forecast == 'partly cloudy'}">
+        <c:url value="./img/weather/partlyCloudy.png" var="weatherImgSrc" />
+    </c:if>
+    <c:if test="${weather.forecast == 'rain'}">
+        <c:url value="./img/weather/rain.png" var="weatherImgSrc" />
+    </c:if>
+    <c:if test="${weather.forecast == 'snow'}">
+        <c:url value="./img/weather/snow.png" var="weatherImgSrc" />
+    </c:if>
+    <c:if test="${weather.forecast == 'sunny'}">
+        <c:url value="./img/weather/sunny.png" var="weatherImgSrc" />
+    </c:if>
+    <c:if test="${weather.forecast == 'thunderstorms'}">
+        <c:url value="./img/weather/thunderstorms.png" var="weatherImgSrc" />
+    </c:if>
 
-    <c:url value="/weatherDetail" var="weatherDetailUrl">
-    <c:param name="fiveDayForecastValue" value="${weather.fiveDayForecastValue}"/>
-    <c:param name="parkCode" value="${weather.parkCode}"/>
-    </c:url>
-    <a href="${weatherDetailUrl}"><img class="weatherImgSrc" src="${weatherImgSrc}" /></a>
-    <div class="weather-detail">
+<c:url value="/weatherDetail" var="weatherDetailUrl">
+<c:param name="fiveDayForecastValue" value="${weather.fiveDayForecastValue}"/>
+<c:param name="parkCode" value="${weather.parkCode}"/>
+</c:url>
+<a href="${weatherDetailUrl}"><img class="weatherImgSrc" src="${weatherImgSrc}" /></a>
+<div class="weather-detail">
 
-        <h3>
-                <c:out value="Day: ${weather.fiveDayForecastValue}" />
-        </h3>
-          <c:if test="${tempSession}">
-             <p><c:out value="Low: ${weather.lowF}°F" /></p>
-             <p><c:out value="High: ${weather.highF}°F" /></p>
-          </c:if>
-          <c:if test="${!tempSession}">
-             <p><c:out value="Low: ${weather.lowC}°C" /></p>
-             <p><c:out value="High: ${weather.highC}°C" /></p>
-          </c:if>
-    </div>
-    </div>
+    <h3>
+            <c:out value="Day: ${weather.fiveDayForecastValue}" />
+    </h3>
+      <c:if test="${tempSession}">
+         <p><c:out value="Low: ${weather.lowF}°F" /></p>
+         <p><c:out value="High: ${weather.highF}°F" /></p>
+      </c:if>
+      <c:if test="${!tempSession}">
+         <p><c:out value="Low: ${weather.lowC}°C" /></p>
+         <p><c:out value="High: ${weather.highC}°C" /></p>
+      </c:if>
+</div>
+</div>
 </c:forEach>
 </div>
 </section>

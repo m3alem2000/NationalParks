@@ -60,5 +60,40 @@ public class Weather {
 			return forecast;
 		}
 	}
-
+		
+	public boolean isExtremeWeather() {
+		return (forecast.equals("snow") || 
+				forecast.equals("sunny") || 
+				forecast.equals("thunderstorms") || 
+				forecast.equals("rain"));
+	}
+	
+	public String getExtremeWeatherAdvisory() {
+		if (forecast.equals("snow")) {
+			return "Be sure to pack snowshoes!";
+		} else if (forecast.equals("sunny")) {
+			return "Be sure to pack sunblock!";
+		} else if (forecast.equals("thunderstorms")) {
+			return "Seek shelter, and avoid hiking on exposed ridges!";
+		} else {
+			return "Be sure to pack rain gear and wear waterproof shoes!";
+		}
+	}
+	
+	public boolean isTempDiffGreaterThan20Fahr() {
+		return highF - lowF > 20;
+	}
+	
+	public String getTempDiffAdvisory() {
+		return "Be sure to wear breathable layers!";
+	}
+	
+	public boolean isTempBelow20Fahr() {
+		return highF < 20 || lowF < 20;
+	}
+	
+	public String getTempBelow20FahrAdvisory() {
+		return "Beware of exposure to frigid temperatures!";
+	}
+	
 }
