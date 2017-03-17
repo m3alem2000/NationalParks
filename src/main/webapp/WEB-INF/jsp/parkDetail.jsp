@@ -23,7 +23,7 @@
 </div>
 
 <div class="park-detail-description">
-<p id="park-text">Founded in ${park.yearFounded}, ${park.parkCode}
+<p id="park-text">Founded in ${park.yearFounded}, ${park.parkName}
 is located in the state of ${park.state} and has ${park.mileOfTrail}
 miles of trails spread out in its ${park.acreage} acres of natural
 landscapes. With a typical ${park.climate} climate and an elevation
@@ -37,6 +37,7 @@ from ${park.numberOfCampSites} different camp sites.</p>
 <c:out value="${temp}"/>
 <span>
 <c:url var="parkDetailUrl" value="/parkDetail?parkCode=${parkCode}"/>
+<div class="tempChange">
 <form action="${parkDetailUrl}" method="POST">
 <c:if test="${tempSession}">
 <input type="hidden" name="temp" value=false>
@@ -47,7 +48,7 @@ from ${park.numberOfCampSites} different camp sites.</p>
 <input type="submit" value="Change to F">
 </c:if>
 </form>
-
+</div>
 </span>
 <div class="five-day-forecast">
 <c:forEach var="weather" items="${weatherForecast}">
