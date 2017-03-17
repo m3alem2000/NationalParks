@@ -4,6 +4,10 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 <section>
+
+<div class="home-title">
+	<h1>The top 10 National parks to visit in America</h1>
+	</div>
 	<c:forEach var="park" items="${parks}">
 		<div class="park-list-div">
 			<div class="park-list-img-div">
