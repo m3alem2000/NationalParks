@@ -3,7 +3,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
-<section>
+<section class="survey-section">
 <form action="survey" method="POST">
 	<div id="survey-list-main-div">
 		<table>
@@ -18,7 +18,7 @@
 		  <tr>
 		  <td align="right"><strong>Select a Park</strong></td>
 		   <td>
-			<select name="parkCode">
+			<select name="parkCode" id="parkName">
 				<c:forEach var="park" items="${parks}">
 				  		<option value="${park.parkCode}"<c:if test="${park.parkCode==parkCode}">selected</c:if>>${park.parkName}</option>
 				</c:forEach>

@@ -1,4 +1,4 @@
-package com.techelevator.ssg;
+package com.techelevator;
 
 import org.junit.AfterClass;
 import org.junit.Assert;
