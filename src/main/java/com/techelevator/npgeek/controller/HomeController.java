@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,13 +35,20 @@ public class HomeController {
 	public String showHomePage(HttpServletRequest request) {
 		List<Park> parkList = parkDao.getAllParks();
 		request.setAttribute("parks", parkList);
+
 		return "home";
 	}
 	
 	@RequestMapping(path={"/parkDetail"}, method=RequestMethod.GET)
-	public String showParkInfoPage(HttpServletRequest request, @RequestParam String parkCode) {
+	public String showParkInfoPage(HttpServletRequest request, @RequestParam String parkCode, ModelMap map) {
 		request.setAttribute("park", parkDao.getParkByParkCode(parkCode));
 		request.setAttribute("weatherForecast", weatherDao.getWeatherByParkCode(parkCode));
+//		if(map.isEmpty() || temp==null || temp==""){
+//			// temp = "F";
+//			 map.put("tempSession", "F");
+//		}if(temp!=""){
+			map.put("tempSession", "F");
+//		}
 		return "parkDetail";
 	}
 	
