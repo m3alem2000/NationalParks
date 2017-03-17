@@ -21,41 +21,47 @@
 			<c:out value="${park.inspirationalQuoteSource}" />
 		</p>
 	</div>
-
-
-<div class="park-detail-description">
-<p id="park-text">Founded in ${park.yearFounded}, ${park.parkName}
-is located in the state of ${park.state} and has ${park.mileOfTrail}
-miles of trails spread out in its ${park.acreage} acres of natural
-landscapes. With a typical ${park.climate} climate and an elevation
-of ${park.elevation} feet, ${park.numberOfAnimalSpecies} different
-species of animals can be spotted in the park. This park attracts
-around ${park.annualVisitors} visitors every year, who can choose
-from ${park.numberOfCampSites} different camp sites.</p>
-</div>
-<c:url value="/parkDetail?parkCode=${parkCode}&temp=C" var="weatherDetailUrlF"/>
-<c:url value="/parkDetail?parkCode=${parkCode}&temp=F" var="weatherDetailUrlC"/>
-<c:out value="${temp}"/>
-<span>
-<c:url var="parkDetailUrl" value="/parkDetail?parkCode=${parkCode}"/>
-<div class="tempChange">
-<form action="${parkDetailUrl}" method="POST">
-<c:if test="${tempSession}">
-<input type="hidden" name="temp" value=false>
-<input type="submit" value="Change to C">
-</c:if>
-<c:if test="${!tempSession}">
-<input type="hidden" name="temp" value=true>
-<input type="submit" value="Change to F">
-</c:if>
-</form>
-</div>
-</span>
-<div class="five-day-forecast">
-<c:forEach var="weather" items="${weatherForecast}">
-<div class="each-day-forecast">
-<c:set value="${weather.parkCode}" var="parkCode" />
-<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
+	<div class="park-detail-description">
+		<p id="park-text">
+			Founded in <span id="year-founded">${park.yearFounded}</span>, <span
+				id="park-name">${park.parkName}</span> is located in the state of <span
+				id="state">${park.state}</span> and has <span id="mile-of-trail">${park.mileOfTrail}</span>
+			miles of trails spread out in its <span id="acreage">${park.acreage}</span>
+			acres of natural landscapes. With a typical <span id="climate">${park.climate}</span>
+			climate and an elevation of <span id="elevation">${park.elevation}</span>
+			feet, <span id="number-of-animals">${park.numberOfAnimalSpecies}</span>
+			different species of animals can be spotted in the park. This park
+			attracts around <span id="anuual-visitors">${park.annualVisitors}</span>
+			visitors every year, who can choose from <span
+				id="number-of-campsites">${park.numberOfCampSites} different
+				camp sites.
+		</p>
+	</div>
+	<c:url value="/parkDetail?parkCode=${parkCode}&temp=C"
+		var="weatherDetailUrlF" />
+	<c:url value="/parkDetail?parkCode=${parkCode}&temp=F"
+		var="weatherDetailUrlC" />
+	<c:out value="${temp}" />
+	<span> <c:url var="parkDetailUrl"
+			value="/parkDetail?parkCode=${parkCode}" />
+		<div class="tempChange">
+			<form action="${parkDetailUrl}" method="POST">
+				<c:if test="${tempSession}">
+					<input type="hidden" name="temp" value=false>
+					<input type="submit" value="Change to C">
+				</c:if>
+				<c:if test="${!tempSession}">
+					<input type="hidden" name="temp" value=true>
+					<input type="submit" value="Change to F">
+				</c:if>
+			</form>
+		</div>
+	</span>
+	<div class="five-day-forecast">
+		<c:forEach var="weather" items="${weatherForecast}">
+			<div class="each-day-forecast">
+				<c:set value="${weather.parkCode}" var="parkCode" />
+				<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
 
 				<c:if test="${weather.forecast == 'cloudy'}">
 					<c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />
