@@ -8,7 +8,8 @@
 	<div id="survey-list-main-div">
 		<table>
 		  <tr><td></td>
-		  	<td><h1>Survey</h1></td>
+		  	<td><h1>Please fill out the survey below and you will find out which park is the top favorite park!</h1></td>
+		  	
 		  </tr>
 		  <tr>
 		  	<td></td>

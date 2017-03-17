@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,7 +21,7 @@ import com.techelevator.npgeek.parks.model.Weather;
 import com.techelevator.npgeek.parks.model.WeatherDAO;
 
 @Controller
-@SessionAttributes("tempPreference")
+@SessionAttributes("tempSession")
 public class HomeController {
 	
 	@Autowired
@@ -34,13 +35,29 @@ public class HomeController {
 	public String showHomePage(HttpServletRequest request) {
 		List<Park> parkList = parkDao.getAllParks();
 		request.setAttribute("parks", parkList);
+
 		return "home";
 	}
 	
 	@RequestMapping(path={"/parkDetail"}, method=RequestMethod.GET)
-	public String showParkInfoPage(HttpServletRequest request, @RequestParam String parkCode) {
+	public String showParkInfoPage(HttpServletRequest request, @RequestParam String parkCode, ModelMap map) {
 		request.setAttribute("park", parkDao.getParkByParkCode(parkCode));
 		request.setAttribute("weatherForecast", weatherDao.getWeatherByParkCode(parkCode));
+		if(map.isEmpty() || map==null){
+			 map.put("tempSession", "F");
+		}
+		return "parkDetail";
+	}
+	
+	@RequestMapping(path={"/parkDetail"}, method=RequestMethod.POST)
+	public String showParkInfoPageC(HttpServletRequest request, @RequestParam boolean temp, @RequestParam String parkCode, ModelMap map) {
+		request.setAttribute("park", parkDao.getParkByParkCode(parkCode));
+		request.setAttribute("weatherForecast", weatherDao.getWeatherByParkCode(parkCode));
+		if(map.get("tempSession").equals(null) || map.get("tempSession")==""){
+			map.put("tempSession", true);
+		}else{
+			map.put("tempSession", temp);
+		}
 		return "parkDetail";
 	}
 	
