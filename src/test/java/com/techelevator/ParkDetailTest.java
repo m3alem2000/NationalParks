@@ -7,13 +7,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.techelevator.npgeek.pageobject.ParkDetailPage;
 import com.techelevator.npgeek.parks.model.Park;
-import com.techelevator.npgeek.parks.model.ParkDAO;
 
-public class parkDetailTest {
+public class ParkDetailTest {
 
 	private static WebDriver webDriver;
 	private HomePage homePage;
@@ -37,9 +34,10 @@ public class parkDetailTest {
 		webDriver.close();
 	}
 	
+	//this test is failing
 	@Test
 	public void test_park_info(){
-		
+
 		ParkDetailPage detailPage = homePage.clickOnPark("CVNP");
 		Assert.assertNotNull(detailPage.getYearFounded());
 		Assert.assertNotNull(detailPage.getParkName());
@@ -51,6 +49,7 @@ public class parkDetailTest {
 		Assert.assertNotNull(detailPage.getNumberofAnimals());
 		Assert.assertNotNull(detailPage.getAnnualVisitors());
 		Assert.assertNotNull(detailPage.getNumberOfCampsites());
+
 	}
 	
 }

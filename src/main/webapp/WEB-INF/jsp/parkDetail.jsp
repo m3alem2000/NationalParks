@@ -32,7 +32,7 @@
 			climate and an elevation of <span id="elevation">${park.elevation}</span>
 			feet, <span id="number-of-animals">${park.numberOfAnimalSpecies}</span>
 			different species of animals can be spotted in the park. This park
-			attracts around <span id="anuual-visitors">${park.annualVisitors}</span>
+			attracts around <span id="annual-visitors">${park.annualVisitors}</span>
 			visitors every year, who can choose from <span
 				id="number-of-campsites">${park.numberOfCampSites}</span> different
 				camp sites.
@@ -63,6 +63,7 @@
 			<div class="each-day-forecast">
 				<c:set value="${weather.parkCode}" var="parkCode" />
 				<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
+
 
 				<c:if test="${weather.forecast == 'cloudy'}">
 					<c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />

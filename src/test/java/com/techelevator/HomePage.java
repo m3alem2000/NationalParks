@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import com.techelevator.npgeek.pageobject.ParkDetailPage;
 import com.techelevator.npgeek.pageobject.SurveyInputPage;
+import com.techelevator.npgeek.pageobject.WeatherDetailPage;
 
 public class HomePage {
 	private WebDriver webDriver;
@@ -27,9 +28,18 @@ public class HomePage {
 		return new ParkDetailPage(webDriver);
 		}
 	
+<<<<<<< HEAD
+	public WeatherDetailPage clickOnWeather(){
+		WebElement link = webDriver.findElement(By.id(""));//need to find id
+		link.click();
+		return new WeatherDetailPage(webDriver);
+		}
+	
+=======
 	public ParkDetailPage checkParksOnHomePage(String parkCode){
 		webDriver.navigate().refresh();
 		return new ParkDetailPage(webDriver);
 	}
+>>>>>>> 54449314f9461423e0b91d83299757f1ee2336b3
 }
 
