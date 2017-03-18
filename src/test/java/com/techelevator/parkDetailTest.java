@@ -28,6 +28,7 @@ public class parkDetailTest {
 	@Before
 	public void goHome(){
 		webDriver.get("http://localhost:8080/m3-java-capstone/");
+		webDriver.navigate().refresh();
 		homePage = new HomePage(webDriver);
 	}
 	
@@ -38,19 +39,18 @@ public class parkDetailTest {
 	
 	@Test
 	public void test_park_info(){
-		Park park = new Park();
+		
 		ParkDetailPage detailPage = homePage.clickOnPark("CVNP");
 		Assert.assertNotNull(detailPage.getYearFounded());
-//		Assert.assertNotNull(detailPage.getParkName());
-//		Assert.assertNotNull(detailPage.getState());
-//		Assert.assertNotNull(detailPage.getMilesOfTrail());
-//		Assert.assertNotNull(detailPage.getAcreage());
-//		Assert.assertNotNull(detailPage.getElevation());
-//		Assert.assertNotNull(detailPage.getClimate());
-//		Assert.assertNotNull(detailPage.getNumberofAnimals());
-//		Assert.assertNotNull(detailPage.getAnnualVisitors());
-//		Assert.assertNotNull(detailPage.getNumberOfCampsites());
-
+		Assert.assertNotNull(detailPage.getParkName());
+		Assert.assertNotNull(detailPage.getState());
+		Assert.assertNotNull(detailPage.getMilesOfTrail());
+		Assert.assertNotNull(detailPage.getAcreage());
+		Assert.assertNotNull(detailPage.getElevation());
+		Assert.assertNotNull(detailPage.getClimate());
+		Assert.assertNotNull(detailPage.getNumberofAnimals());
+		Assert.assertNotNull(detailPage.getAnnualVisitors());
+		Assert.assertNotNull(detailPage.getNumberOfCampsites());
 	}
 	
 }

@@ -16,11 +16,11 @@
 				
 				<c:url value="/img/parks/${parkCodeLower}.jpg" var="parkImgSrc"/>
 				<c:url value="/parkDetail" var="parkDetailUrl">
-					<c:param name="parkCode" value="${parkCode}" />
+				<c:param name="parkCode" value="${parkCode}"/>
 				</c:url>
 				<a href="${parkDetailUrl}"><img id="${parkCode}" class="park-list-img" src="${parkImgSrc}" /></a>
 
-				<h3><c:out value="${park.parkName}"/></h3>
+				<h3><span id="name${park.parkName}"><c:out value="${park.parkName}"/></span></h3>
 				<p><c:out value="${park.state}"/></p>
 				<p><c:out value="${park.description}"/></p>
 			</div>
