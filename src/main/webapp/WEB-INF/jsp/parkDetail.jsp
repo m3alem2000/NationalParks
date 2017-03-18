@@ -21,9 +21,12 @@
 			<c:out value="${park.inspirationalQuoteSource}" />
 		</p>
 	</div>
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> d7744bb0d123fef97d8803d9dace43df046ecc87
 	<div class="park-detail-description">
 		<p id="park-text">
 			Founded in <span id="year-founded">${park.yearFounded}</span>, <span
@@ -65,7 +68,10 @@
 			<div class="each-day-forecast">
 				<c:set value="${weather.parkCode}" var="parkCode" />
 				<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> d7744bb0d123fef97d8803d9dace43df046ecc87
 
 				<c:if test="${weather.forecast == 'cloudy'}">
 					<c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />
@@ -118,6 +124,3 @@
 			</div>
 		</c:forEach>
 	</div>
-</section>
-
-<c:import url="/WEB-INF/jsp/common/footer.jsp" />

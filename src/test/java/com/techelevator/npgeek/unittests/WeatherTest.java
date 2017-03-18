@@ -11,8 +11,8 @@ public class WeatherTest {
 		Weather testWeather = new Weather();
 		testWeather.setParkCode("GNP");
 		testWeather.setFiveDayForecastValue(1);
-		testWeather.setLowF(lowF);
-		testWeather.setHighF(highF);
+		testWeather.setLowF(27);
+		testWeather.setHighF(40);
 		testWeather.setLowC(lowC);
 		testWeather.setHighC(highC);
 		testWeather.setForecast(forecast);
