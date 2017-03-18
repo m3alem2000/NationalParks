@@ -21,6 +21,7 @@
 			<c:out value="${park.inspirationalQuoteSource}" />
 		</p>
 	</div>
+
 	<div class="park-detail-description">
 		<p id="park-text">
 			Founded in <span id="year-founded">${park.yearFounded}</span>, <span
@@ -33,7 +34,7 @@
 			different species of animals can be spotted in the park. This park
 			attracts around <span id="annual-visitors">${park.annualVisitors}</span>
 			visitors every year, who can choose from <span
-				id="number-of-campsites">${park.numberOfCampSites} different
+				id="number-of-campsites">${park.numberOfCampSites}</span> different
 				camp sites.
 		</p>
 	</div>
@@ -62,6 +63,7 @@
 			<div class="each-day-forecast">
 				<c:set value="${weather.parkCode}" var="parkCode" />
 				<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
+
 
 				<c:if test="${weather.forecast == 'cloudy'}">
 					<c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />
@@ -114,6 +116,3 @@
 			</div>
 		</c:forEach>
 	</div>
-</section>
-
-<c:import url="/WEB-INF/jsp/common/footer.jsp" />

@@ -1,6 +1,5 @@
 package com.techelevator;
 import org.openqa.selenium.By;
-import org.openqa.selenium.By.ById;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -23,16 +22,24 @@ public class HomePage {
 		}
 	
 	public ParkDetailPage clickOnPark(String parkCode){
+		webDriver.navigate().refresh();
 		WebElement link = webDriver.findElement(By.id(parkCode));
 		link.click();
 		return new ParkDetailPage(webDriver);
 		}
 	
+<<<<<<< HEAD
 	public WeatherDetailPage clickOnWeather(){
 		WebElement link = webDriver.findElement(By.id(""));//need to find id
 		link.click();
 		return new WeatherDetailPage(webDriver);
 		}
 	
+=======
+	public ParkDetailPage checkParksOnHomePage(String parkCode){
+		webDriver.navigate().refresh();
+		return new ParkDetailPage(webDriver);
+	}
+>>>>>>> 54449314f9461423e0b91d83299757f1ee2336b3
 }
 

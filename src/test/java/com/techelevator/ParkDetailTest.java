@@ -25,6 +25,7 @@ public class ParkDetailTest {
 	@Before
 	public void goHome(){
 		webDriver.get("http://localhost:8080/m3-java-capstone/");
+		webDriver.navigate().refresh();
 		homePage = new HomePage(webDriver);
 	}
 	
@@ -36,6 +37,7 @@ public class ParkDetailTest {
 	//this test is failing
 	@Test
 	public void test_park_info(){
+
 		ParkDetailPage detailPage = homePage.clickOnPark("CVNP");
 		Assert.assertNotNull(detailPage.getYearFounded());
 		Assert.assertNotNull(detailPage.getParkName());

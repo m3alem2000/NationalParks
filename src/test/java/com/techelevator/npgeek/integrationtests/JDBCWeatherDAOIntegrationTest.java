@@ -1,4 +1,4 @@
-package com.techelevator;
+package com.techelevator.npgeek.integrationtests;
 
 import java.util.List;
 

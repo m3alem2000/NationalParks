@@ -11,12 +11,7 @@ public class HomePage {
 	public HomePage(WebDriver webDriver){
 		this.webDriver = webDriver;
 	}
-	
-	public StoreDetailInputPage selectPark(String parkCode){
-		WebElement link1 = webDriver.findElement(ById.id(parkCode));
-		link1.click();
-		return new StoreDetailInputPage(webDriver);
-	}
+
 //	
 //	public StoreDetailInputPage clickSecondProductQuantity(){
 //		WebElement link = webDriver.findElement(By.linkText("Space Store"));
