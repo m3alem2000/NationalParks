@@ -6,11 +6,12 @@
 <section class="survey-section">
 <form action="survey" method="POST">
 	<div id="survey-list-main-div">
+		<h1 id="survey-title">Please fill out the survey below, select your favorite park and find out what is the favorite park in the Geek Community:</h1>
 		<table>
-		  <tr><td></td>
+		  <!-- <tr><td></td>
 		  	<td><h1>Please fill out the survey below and you will find out which park is the top favorite park!</h1></td>
 		  	
-		  </tr>
+		  </tr> -->
 		  <tr>
 		  	<td></td>
 		  	<c:if test="${flag==false}"><td style="color:red">Please fill all fields</td></c:if>

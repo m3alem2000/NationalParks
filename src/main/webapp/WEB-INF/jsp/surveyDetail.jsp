@@ -3,9 +3,9 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<section>
-	<h1>Thank you for taking the survey!</h1>
-	<table>
+<section class="section">
+	<h1 id="survey-thanks">Thank you for taking the survey!</h1>
+	<table id="survey-result">
 		<c:set value="${park.parkCode}" var="parkCode" />
 		<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
 		<tr>
@@ -13,7 +13,7 @@
 			<img class="detail-detail-image" src="./img/parks/${parkCodeLower}.jpg"/>
 			</td>
 		<td style="padding:20px">
-			<h3><strong>Park <c:out value="${park.parkName}"/></strong><br><br> has top reviews<br> <c:out value="${survey.votes}"/> positive reviews!</h3><br>
+			<h3 id="winner">Park <c:out value="${park.parkName}"/> is the winner with <c:out value="${survey.votes}"/> votes!</h3><br>
 
 		</td>
 	</table>

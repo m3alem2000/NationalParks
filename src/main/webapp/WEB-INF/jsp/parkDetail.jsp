@@ -3,7 +3,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<section>
+<section class="section">
 	<h1 id="detail-title">${park.parkName}</h1>
 
 	<div class="detail-pic-and-quote">
@@ -37,7 +37,19 @@
 				id="number-of-campsites">${park.numberOfCampSites}</span> different
 				camp sites.
 		</p>
+		
+		<div id="entry-fee">
+		<c:if test="${park.entryFee == 0}">
+				<c:out value="Entry is free!" />
+		</c:if>
+		<c:if test="${park.entryFee > 0}">
+				<c:out value="Entry fee: $${park.entryFee}/per person"/>
+		</c:if>
+		</div>
+		
 	</div>
+	
+	<h1 id="five-day-forecast-title">Five Day Weather Forecast:</h1>
 	<c:url value="/parkDetail?parkCode=${parkCode}&temp=C"
 		var="weatherDetailUrlF" />
 	<c:url value="/parkDetail?parkCode=${parkCode}&temp=F"
@@ -116,3 +128,4 @@
 			</div>
 		</c:forEach>
 	</div>
+	</section>
