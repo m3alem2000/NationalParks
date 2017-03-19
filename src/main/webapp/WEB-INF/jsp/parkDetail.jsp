@@ -21,12 +21,7 @@
 			<c:out value="${park.inspirationalQuoteSource}" />
 		</p>
 	</div>
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> d7744bb0d123fef97d8803d9dace43df046ecc87
 	<div class="park-detail-description">
 		<p id="park-text">
 			Founded in <span id="year-founded">${park.yearFounded}</span>, <span
@@ -37,10 +32,9 @@
 			climate and an elevation of <span id="elevation">${park.elevation}</span>
 			feet, <span id="number-of-animals">${park.numberOfAnimalSpecies}</span>
 			different species of animals can be spotted in the park. This park
-			attracts around <span id="anuual-visitors">${park.annualVisitors}</span>
-			visitors every year, who can choose from <span
-				id="number-of-campsites">${park.numberOfCampSites}</span> different
-				camp sites.
+			attracts around <span id="annual-visitors">${park.annualVisitors}</span>
+			visitors every year, who can choose from <span id="number-of-campsites">${park.numberOfCampSites}</span> different
+			camp sites.
 		</p>
 	</div>
 	<c:url value="/parkDetail?parkCode=${parkCode}&temp=C"
@@ -68,10 +62,6 @@
 			<div class="each-day-forecast">
 				<c:set value="${weather.parkCode}" var="parkCode" />
 				<c:set value="${fn:toLowerCase(parkCode)}" var="parkCodeLower" />
-<<<<<<< HEAD
-
-=======
->>>>>>> d7744bb0d123fef97d8803d9dace43df046ecc87
 
 				<c:if test="${weather.forecast == 'cloudy'}">
 					<c:url value="./img/weather/cloudy.png" var="weatherImgSrc" />
