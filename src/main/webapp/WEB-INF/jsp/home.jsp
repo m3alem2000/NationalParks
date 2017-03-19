@@ -6,7 +6,8 @@
 <section>
 
 <div class="home-title">
-	<h1>The top 10 National parks to visit in America</h1>
+
+	<h1>The top 10 National Parks to visit in America</h1>
 	</div>
 	<c:forEach var="park" items="${parks}">
 		<div class="park-list-div">
@@ -25,15 +26,8 @@
 				<p><c:out value="${park.description}"/></p>
 			</div>
 		</div>
-	</c:forEach>
+	</c:forEach> 
+
 </section>
-
-
-
-
-
-
-
-
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
