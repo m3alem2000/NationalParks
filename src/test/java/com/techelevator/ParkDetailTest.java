@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.techelevator.npgeek.pageobject.ParkDetailPage;
 import com.techelevator.npgeek.parks.model.Park;
 
-public class ParkDetailTest {
+public class parkDetailTest {
 
 	private static WebDriver webDriver;
 	private HomePage homePage;
