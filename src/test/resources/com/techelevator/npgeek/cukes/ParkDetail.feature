@@ -1,4 +1,4 @@
-Feature: ParkDetailPage
+Feature: ParkDetailPage Test
 
 Scenario Outline: Return Correct ParkDetailPage
 	Given I am on the NPGeek home page

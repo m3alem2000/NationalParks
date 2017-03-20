@@ -38,7 +38,7 @@ public class SurveyInputPage {
 	
 	public SurveyResultsPage submit(){
 		WebElement submitButton = webDriver.findElement(By.id("formSubmitButton"));
-				submitButton.submit();
+		submitButton.submit();
 		return new SurveyResultsPage(webDriver);
 	}
 }
