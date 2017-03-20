@@ -16,4 +16,4 @@ Scenario Outline: Return Correct ParkDetailPage
 	
 	Examples:
 	  | parkCode | yearFounded | parkName | state | milesOfTrail | acreage | elevation | climate | numberOfAnimals | annualVisitors | numberOfCampsites |
-	  | "CVNP"   | "2000" | "Cuyahoga Valley National Park" | "Ohio" | "125.0" | "32832" | "696" | "Woodland" | "390" | "2189849" | "0" |
+	  | CVNP   | 2000 | Cuyahoga Valley National Park | Ohio | 125.0 | 32832 | 696 | Woodland | 390 | 2189849 | 0 |
