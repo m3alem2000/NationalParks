@@ -1,0 +1,237 @@
+header {
+	position: relative;
+	background-color: #b3b300;
+	border-radius: 5px;
+	min-width: 750px;
+}
+
+#home-page-logo {
+	min-width: 400x;
+	max-width: 80%;
+	min-height: 200px;
+	max-height: 60%;
+	z-index: -1;
+}
+
+.section {
+	background-color: #F2FEE5;
+}
+
+.home-title {
+	text-align: center;
+	font-size: 150%;
+	padding-top: 5px;
+}
+
+.park-list-div {
+	width: 95%;
+	display: inline;
+}
+
+.park-list-img-div {
+	width: 25%;
+	height: 200px;
+	float: left;
+}
+
+.park-list-img {
+	width: 110%;
+	height: 110%;
+}
+
+.park-list-snippet-div {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+	background-color: #f3ffe6;
+	border: solid 1px black;
+	border-radius: 5px;
+	padding: 20px;
+	position: relative;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.park-list-snippet-div img {
+	float: left;
+	width: 300px;
+	margin-right: 10px;
+}
+
+/* survey page */
+#survey-title {
+	font-size: 200%;
+	padding-left: 25px;
+	padding-top: 20px;
+}
+
+#survey-link-anchor {
+	display: block;
+	color: white;
+}
+
+#survey-link {
+	position: absolute;
+	background-color: #996633;
+	right: 100px;
+	bottom: 25px;
+	border-radius: 5px;
+	padding: 0px 50px 0px 50px;
+	border: solid 2px black;
+}
+
+#survey-link-text {
+	color: white;
+	font-family: "Ariel";
+	underline: none;
+}
+
+#survey-list-main-div {
+	width: 80%;
+	height: 300px;
+	padding: 50px;
+	font-size: 14px;
+	position: absolute;
+	top: 250px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	/* margin: auto; */
+	margin-top: 20px;
+}
+
+.survey-section {
+	background-color: #F2FEE5;
+	height: 600px;
+}
+
+/* survey detail page */
+
+#survey-thanks{
+	font-size: 200%;
+	text-align:center;
+	margin-top:0px;
+	padding-top:20px;
+}
+
+#survey-result {
+	margin: 0px auto;  
+}
+
+#winner{
+	font-size: 150%;
+}
+
+/* park detail page */
+#detail-title {
+	margin-top: 0px;
+	padding-top: 20px;
+	text-align: center;
+	font-size: 200%;
+}
+
+.detail-pic-and-quote {
+	display: block;
+	text-align: right;
+	width: 499px;
+	/* position: relative; */
+	left: 240px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.park-detail-description {
+	font-size: 150%;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+#inspirational-quote {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-style: italic;
+}
+
+#inspirational-quote-source {
+	margin: 0;
+	padding: 0;
+	font-size: 80%;
+}
+
+.weatherImgSrc {
+	width: 120px;
+	height: 120px;
+}
+
+.invitation {
+	text-align: center;
+}
+
+#five-day-forecast-title {
+	font-size: 150%;
+	text-decoration: underline;
+	text-align: center;
+	padding-top: 50px;
+}
+
+.five-day-forecast {
+	width: 55%;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.each-day-forecast {
+	width: 120px;
+	display: inline-block;
+	padding-left: 30px;
+}
+
+.tempChange {
+	padding-left: 350px;
+}
+
+/* weather detail page */
+#weather-invite {
+	margin-top: 0px;
+	padding: 20px;
+	font-size: 200%;
+}
+
+#weather-tips-title {
+	padding-left: 40px;
+	text-decoration: underline;
+	font-size: 180%;
+	margin: 0px;
+}
+
+.weather-detail-img {
+	display: inline;
+	width: 250px;
+	height: 250px;
+	padding-left: 40px;
+	padding-bottom: 30px;
+}
+
+.temp-low-high {
+	display: inline-block;
+	width: 50%;
+	height: 100px;
+}
+
+.weather-tips {
+	size: 180%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.tips-ul {
+	margin: 0px;
+	padding-bottom: 10px;
+	font-size: 120%;
+}
+
+.previous-page {
+	text-align: right;
+}
